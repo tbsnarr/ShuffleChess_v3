@@ -1,19 +1,35 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- The head contains page information for browsers and links to the separate style and game files. -->
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#101b20"><title>Shuffle Chess</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<!-- The body contains everything visitors can see and use on the page. -->
 <body><main class="wrap">
+<!-- The header names the game and labels it as a chess variant. -->
 <header class="top"><div class="brand"><span class="mark">♞</span><span>PLAY / SHIFT</span></div><span class="tag">A chess variant</span></header>
+<!-- This container groups the board and side panel so CSS can place them together. -->
 <div class="layout"><section><div class="intro"><div class="eyebrow">Classic rules. Unclassic positions.</div><h1>Shuffle Chess</h1><p>Play standard chess, but after every three moves all pieces of each color trade places at random. Make a plan. Then watch it disappear.</p></div>
+<!-- JavaScript draws the chess squares inside this board container. -->
 <div class="board-shell"><div id="board" class="board" role="grid" aria-label="Chessboard"></div><div class="board-note"><span id="orientation">White at bottom</span><span>Click a piece, then a square</span></div></div></section>
+<!-- The side panel shows whose turn it is, shuffle progress, and the move list. -->
 <aside class="side"><div class="card"><div class="statusline"><span id="turnDot" class="turn-dot"></span><span id="status">White to move</span></div><div id="detail" class="sub">Choose a piece to see its legal moves.</div><div class="controls"><button class="btn" id="undo">↶ &nbsp;Undo</button><button class="btn" id="flip">⇅ &nbsp;Flip board</button><button class="btn primary" id="new">New game</button></div></div>
+<!-- This card explains when the next random shuffle happens. -->
 <div class="card rule"><div class="rule-title"><span>Next shuffle</span><span id="counter" class="counter">0 / 3</span></div><div class="track"><div id="fill" class="fill"></div></div><p>After 3 moves, every piece jumps to a random square occupied by its own color. Turn order stays the same.</p><div id="event" class="event"></div></div>
+<!-- This card displays the moves played so far and a short rules reminder. -->
 <div class="card moves-card"><div class="moves-title"><span>Move history</span><span id="plyCount" class="sub">0 moves</span></div><div id="moves" class="moves"></div><div class="tip">Castling, en passant, and promotion are supported. Promotion choices appear when needed.</div></div></aside></div></main>
+<!-- This dialog appears when a pawn reaches the far edge and needs a promotion piece. -->
 <div class="modal" id="promotion"><div class="dialog"><strong>Choose a promotion</strong><div class="choices" id="choices"></div></div></div>
+<!-- type="module" lets the game script import the chess rules library. -->
 <script type="module" src="script.js"></script></body></html>
+
+
+
+
+
+
 
 
 
